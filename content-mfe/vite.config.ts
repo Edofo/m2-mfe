@@ -6,10 +6,10 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'shell',
-      remotes: {
-        headerApp: 'http://localhost:5001/assets/remoteEntry.js',
-        contentApp: 'http://localhost:5002/assets/remoteEntry.js'
+      name: 'content',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Content': './src/App'
       },
       shared: ['react', 'react-dom']
     })
@@ -21,9 +21,11 @@ export default defineConfig({
     cssCodeSplit: false
   },
   server: {
-    port: 5000
+    port: 5002,
+    cors: true
   },
   preview: {
-    port: 5000
+    port: 5002,
+    cors: true
   }
 }); 

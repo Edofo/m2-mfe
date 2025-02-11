@@ -3,6 +3,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import './styles/global.scss';
 
 const Header = React.lazy(() => import('headerApp/Header'));
+const Content = React.lazy(() => import('contentApp/Content'));
 
 const App: React.FC = () => {
   return (
@@ -10,12 +11,9 @@ const App: React.FC = () => {
       <ErrorBoundary>
         <Suspense fallback={<div>Loading Header...</div>}>
           <Header />
+          <Content />
         </Suspense>
       </ErrorBoundary>
-      <div className="container">
-        <h2>Shell Application Content</h2>
-        <p>This is the main content of the shell application.</p>
-      </div>
     </div>
   );
 };
