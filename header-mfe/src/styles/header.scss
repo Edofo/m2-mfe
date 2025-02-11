@@ -1,0 +1,43 @@
+@use "variables" as v;
+@use "sass:color";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+.header {
+  background: linear-gradient(135deg, v.$color-primary, v.$color-secondary);
+  color: v.$color-text-light;
+  padding: 1rem;
+  box-shadow: v.$shadow-sm;
+  font-family: "Montserrat", sans-serif;
+
+  &__container {
+    max-width: v.$breakpoint-desktop;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &__nav {
+    a {
+      color: v.$color-text-light;
+      text-decoration: none;
+      margin-left: 2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: v.$transition-default;
+      font-weight: 500;
+
+      &:hover {
+        background-color: color.change(v.$color-text-light, $alpha: 0.1);
+        box-shadow: v.$shadow-hover;
+      }
+    }
+  }
+}

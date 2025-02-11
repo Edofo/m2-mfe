@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import ErrorBoundary from './components/ErrorBoundary';
+import './styles/global.scss';
 
 const Header = React.lazy(() => import('headerApp/Header'));
 
@@ -11,7 +12,7 @@ const App: React.FC = () => {
           <Header />
         </Suspense>
       </ErrorBoundary>
-      <div style={{ padding: '2rem' }}>
+      <div className="container">
         <h2>Shell Application Content</h2>
         <p>This is the main content of the shell application.</p>
       </div>

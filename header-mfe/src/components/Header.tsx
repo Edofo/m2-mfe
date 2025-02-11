@@ -1,18 +1,16 @@
 import type React from 'react';
+import '../styles/header.scss';
 
 const Header: React.FC = () => {
   return (
-    <header style={{
-      backgroundColor: '#333',
-      color: 'white',
-      padding: '1rem',
-      textAlign: 'center'
-    }}>
-      <h1>Micro Frontend Header</h1>
-      <nav>
-        <a href="/" style={{ color: 'white', marginRight: '1rem' }}>Home</a>
-        <a href="/about" style={{ color: 'white' }}>About</a>
-      </nav>
+    <header className="header">
+      <div className="header__container">
+        <h1 className="header__title">Micro Frontend Header</h1>
+        <nav className="header__nav">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+        </nav>
+      </div>
     </header>
   );
 };
